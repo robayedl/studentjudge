@@ -1,0 +1,36 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+{% block title %}About{% endblock %}
+{% block content%}
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>About</h2>
+          <p>About Us</p>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
+                <img src="{{ About.image.url }}" style="height: 300px;width: 900px" class="img-fluid" alt="about image">
+            </div>
+          <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
+            <h3>{{ About.title }}</h3>
+            <p class="font-italic">
+                {{ About.description }}
+            </p>
+          </div>
+        </div>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+
+      </div>
+
+    </section><!-- End About Section -->
+    {% include 'main/footer.html'%}
+{% endblock %}
+

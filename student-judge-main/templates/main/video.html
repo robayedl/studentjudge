@@ -1,0 +1,74 @@
+{% extends 'main/layout.html' %}
+
+{% load embed_video_tags %}
+{% load static %}
+{% block title %}Video{% endblock %}
+{% load widget_tweaks %}
+{% block content %}
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="container">
+
+        <h1 class="text-center text-uppercase">videos</h1>
+
+
+    <div class="text-center card card-body">
+            <form method="get">
+
+                <div class="form-row text-center">
+                    <div class="form-group col-md-6">
+                        {{ myvideoFilter.form.Class.label_tag}}
+                        {% render_field myvideoFilter.form.Class class="form-control" %}
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        {{ myvideoFilter.form.subject.label_tag}}
+                        {% render_field myvideoFilter.form.subject class="form-control" %}
+                    </div>
+
+
+                    <div class="form-group col-md-6">
+                        {{ myvideoFilter.form.chapter.label_tag}}
+                        {% render_field myvideoFilter.form.chapter class="form-control" %}
+                    </div>
+
+                     <div class="form-group col-md-6">
+                        {{ myvideoFilter.form.title.label_tag}}
+                        {% render_field myvideoFilter.form.title class="form-control" %}
+                    </div>
+
+                   <div class="col text-center"> <button class="btn btn-primary center" type="submit">Search</button>
+                    <button class="btn btn-danger center" type="reset">Reset</button>
+                   </div>
+                </div>
+            </form>
+    </div>
+    <br>
+
+
+     <div class="container">
+
+            <div class="row">
+                {% for b in myvideoFilter.qs %}
+            <div class="card col-md-6">
+                <div class="card-body">
+                    <div class="embed-responsive embed-responsive-4by3">
+                    {%video b.video%}<br>
+                        </div>
+                    <p class="text-center"><h4>{{ b.title }}</h4>
+                    <hr>
+                    <cite title="Source Title"> Class: {{ b.Class }} | Subject: {{ b.subject }} | Chapter: {{ b.chapter }} <br> By {{ b.author }} | {{ b.created }}</cite>
+                </div>
+            </div>
+                {% endfor %}
+
+            </div>
+
+
+    </div>
+    </div>
+
+{% endblock %}
