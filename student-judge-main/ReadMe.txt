@@ -7,7 +7,7 @@ Student Judge (update 0.1)
 >added video feature (with layout and design)(dynamic page)
 
 
-Student Judge (update 0.2)
+Student Judge (update 1.0)
 >added recovery password feature
 >added Search/Query feature into blog
 >added Search/Query feature into video
@@ -17,5 +17,5 @@ Student Judge (update 0.2)
 >included database file (sql format)
 
 
-Student Judge (update 0.3)(next update)
+Student Judge (update 1.1)(next update)
 >Work in progress
